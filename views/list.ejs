@@ -1,0 +1,32 @@
+<h2>게시글 목록</h2>
+
+<form method="get" action="/board">
+    <input type="text" name="search" value="<%= search %>" placeholder="제목 검색">
+    <button type="submit">검색</button>
+</form>
+
+<% if (!rows || rows.length === 0) { %>
+    <p>등록된 게시물이 없습니다.</p>
+<% } else { %>
+    <ul>
+    <% rows.forEach(function(row){ %>
+        <li>
+            <a href="/board/view/<%= row.id %>"><%= row.title %></a>
+            (조회수: <%= row.view_count %>)
+        </li>
+    <% }); %>
+    </ul>
+
+    <!-- 페이지 네비게이션 -->
+    <div>
+        <% for(let i = 1; i <= totalPage; i++){ %>
+            <% if (i === page) { %>
+                <strong><%= i %></strong>
+            <% } else { %>
+                <a href="/board?page=<%= i %>&search=<%= search %>"><%= i %></a>
+            <% } %>
+        <% } %>
+    </div>
+<% } %>
+
+<p><a href="/board/write"><button>글쓰기</button></a></p>

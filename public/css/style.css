@@ -1,0 +1,29 @@
+body {
+    background-color: #1f1f1f; /* 배경 */
+    color: #ffffff;            /* 기본 텍스트 흰색 */
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #ffaacc; /* 포인트컬러 */
+    padding: 10px;
+    text-align: center;
+}
+
+a, button {
+    color: #ffffff;
+    background-color: #ffaa00;
+    border: none;
+    padding: 5px 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+a:hover, button:hover {
+    opacity: 0.8;
+}
+
+main {
+    padding: 20px;
+}
